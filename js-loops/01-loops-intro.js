@@ -6,7 +6,7 @@ for (let i = 1; i <= 10; i++) {
 
 // backwords 5,4,3,....
 
-for (let i = 5; i >= 1; i--) {
+for (let i = 10; i >= 1; i--) {
   console.log(i);
 }
 

@@ -6,4 +6,4 @@ function generateRandomNumber(a, b) {
 
 module.exports.generateRandomNumber = generateRandomNumber;
 
-// const { generateRandomNumber } = require("../utils/math-helper.js");
+// const { generateRandomNumber } = require("../utils/MathHelper.js");
