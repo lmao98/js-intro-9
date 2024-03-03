@@ -66,3 +66,25 @@ console.log("The random number is = ", randomNumber);
 for (let i = 1; i <= randomNumber; i += 2) {
   console.log(i);
 }
+
+/*
+Generate a random number bt 1 to 10 (both inclusive
+Find the product of all the numbers starting from 1 to randomly generated random
+
+5       -> 1 * 2 * 3 * 4 * 5 -> 120
+6       -> 1 * 2 * 3 * 4 * 5 * 6 -> 720
+3       -> 1 * 2 * 3 -> 6
+*/
+
+let ran = generateRandomNumber(1, 10);
+
+console.log("Random number is =", ran);
+
+let result = 1;
+
+for (i = 1; i <= ran; i++) {
+  result *= i;
+  console.log(i);
+}
+
+console.log(result);
