@@ -107,11 +107,22 @@ console.log("\n_______________________\n");
 let objects = ["Pen", "notebook", "Book", "paper", "bag", "pencil", "Ruler"];
 console.log(objects);
 
-let countBP = objects.filter((object) => object.toUpperCase().startsWith("B") || object.toUpperCase().startsWith("P")).length;
-console.log("Elements starting with 'B' or 'P = ", countBP);
+let bpCounter = 0;
+let bookPenPartialCounter = 0;
 
-let countBookPen = objects.filter((object) => object.toUpperCase().includes("BOOK") || object.toUpperCase().includes("PEN")).length;
-console.log("Elements having 'book' or 'pen' = ", countBookPen);
+for (let i = 0; i < objects.length; i++) {
+  if (objects[i].at(0).toLowerCase() === "b" || objects[i].at(0).toLowerCase() === "p") {
+    bpCounter++;
+  }
+}
+console.log("Elements starting with 'B' or 'P' =", bpCounter);
+
+for (let i = 0; i < objects.length; i++) {
+  if (objects[i].toLowerCase().includes("book") || objects[i].toLowerCase().includes("pen")) {
+    bookPenPartialCounter++;
+  }
+}
+console.log("Elements having 'book' or 'pen' =", bookPenPartialCounter);
 
 // Task - 13
 console.log("\n_______________________\n");
@@ -162,3 +173,37 @@ for (let i = 0; i < firstArray.length; i++) {
   thirdArray.push(Math.max(firstArray[i], secondArray[i]));
 }
 console.log("3rd array is =", thirdArray);
+
+// Task - 15
+console.log("\n_______________________\n");
+
+function firstDuplicate(arr) {
+  const encountered = [];
+
+  // Iterate through the array
+  for (let i = 0; i < arr.length; i++) {
+    // If element already encountered, return it
+    if (encountered[arr[i]] !== undefined) {
+      return arr[i];
+    } else {
+      // Otherwise, mark the element as encountered
+      encountered[arr[i]] = true;
+    }
+  }
+
+  // If no duplicates found, return -1
+  return -1;
+}
+const array1 = [3, 7, 10, 0, 3, 10]; // The first duplicate is 2
+const array2 = [5, 7, 7, 0, 5, 10]; // The first duplicate is 2
+const array3 = [5, "5", 3, 7, 4]; // The first duplicate is 2
+const array4 = [123, "abc", "123", 3, "abc"]; // The first duplicate is 2
+const array5 = [1, 2, 3]; // The first duplicate is 2
+const array6 = ["foo", "abc", "123", "bar"]; // The first duplicate is 2
+
+console.log(firstDuplicate([1, 2, 3, 4, 5, 6, 7, 8, 1])); // Output: 2
+console.log(firstDuplicate(array2)); // Output: 2
+console.log(firstDuplicate(array3)); // Output: 2
+console.log(firstDuplicate(array4)); // Output: 2
+console.log(firstDuplicate(array5)); // Output: 2
+console.log(firstDuplicate(array6)); // Output: 2
