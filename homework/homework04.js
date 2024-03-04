@@ -40,8 +40,6 @@ console.log("\n_______________________\n");
 
 let randomNumber = generateRandomNumber(1, 10);
 
-console.log("Random number is", randomNumber);
-
 // Function to calculate factorial of a number
 function factorial(num) {
   if (num === 0 || num === 1) {
@@ -52,7 +50,22 @@ function factorial(num) {
   }
   return num;
 }
-
-// Calculate factorial of the random number
 let result = factorial(randomNumber);
-console.log("Factorial:", result);
+console.log(`The random number is ${randomNumber} and it's factorial is ${result}`);
+
+// Task - 07
+console.log("\n_______________________\n");
+
+function findNumberDivisibleBy5() {
+  let attempts = 0;
+  let randomNumber;
+
+  do {
+    randomNumber = generateRandomNumber(1, 100);
+    attempts++;
+  } while (randomNumber % 5 !== 0);
+
+  console.log(`Random number is = ${randomNumber} and number of attempts to generate it is = ${attempts}`);
+}
+
+findNumberDivisibleBy5();
