@@ -119,7 +119,6 @@ console.log("\n_______________________\n");
 let numbers1 = [3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78];
 console.log(numbers1);
 
-// Counting elements more than 10
 let countMoreThan10 = 0;
 let i = 0;
 do {
@@ -130,7 +129,6 @@ do {
 } while (i < numbers1.length);
 console.log("Elements that are more than 10 =", countMoreThan10);
 
-// Counting elements less than 10
 let countLessThan10 = 0;
 i = 0;
 do {
@@ -141,7 +139,6 @@ do {
 } while (i < numbers1.length);
 console.log("Elements that are less than 10 =", countLessThan10);
 
-// Counting elements equal to 10
 let countEqual10 = 0;
 i = 0;
 do {
@@ -151,3 +148,17 @@ do {
   i++;
 } while (i < numbers1.length);
 console.log("Elements that are 10 =", countEqual10);
+
+// Task - 14
+console.log("\n_______________________\n");
+
+let firstArray = [5, 8, 13, 1, 2];
+let secondArray = [9, 3, 67, 1, 0];
+let thirdArray = [];
+console.log("1st array is =", firstArray);
+console.log("2nd array is =", secondArray);
+
+for (let i = 0; i < firstArray.length; i++) {
+  thirdArray.push(Math.max(firstArray[i], secondArray[i]));
+}
+console.log("3rd array is =", thirdArray);
