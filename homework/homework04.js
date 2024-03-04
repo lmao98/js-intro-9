@@ -69,3 +69,85 @@ function findNumberDivisibleBy5() {
 }
 
 findNumberDivisibleBy5();
+
+// Task - 08
+console.log("\n_______________________\n");
+
+let countries = ["Germany", "Argentina", "Ukraine", "Romania"];
+let countriesSorted = countries.slice().sort();
+console.log(countries);
+console.log(countriesSorted); // using another variable to save the sorted array is better as sort will change the value of the array.
+
+// Task - 09
+console.log("\n_______________________\n");
+
+let cartonDogs = ["Scooby", "Doo", "Snoopy", "Blue", "Pluto", "Dino", "Sparky"];
+console.log(cartonDogs);
+console.log(cartonDogs.includes("Pluto"));
+
+// Task - 10
+console.log("\n_______________________\n");
+
+let cartonCats = ["Garfield", "Tom", "Sylvester", "Azrael"];
+console.log(cartonCats.sort());
+console.log(cartonCats.includes("Garfield") && cartonCats.includes("Felix"));
+
+// Task - 11
+console.log("\n_______________________\n");
+
+let numbers = [10.5, 20.75, 70, 80, 15.75];
+console.log(numbers);
+for (const num of numbers) {
+  console.log(num);
+}
+
+// Task - 12
+console.log("\n_______________________\n");
+
+let objects = ["Pen", "notebook", "Book", "paper", "bag", "pencil", "Ruler"];
+console.log(objects);
+
+let countBP = objects.filter((object) => object.toUpperCase().startsWith("B") || object.toUpperCase().startsWith("P")).length;
+console.log("Elements starting with 'B' or 'P = ", countBP);
+
+let countBookPen = objects.filter((object) => object.toUpperCase().includes("BOOK") || object.toUpperCase().includes("PEN")).length;
+console.log("Elements having 'book' or 'pen' = ", countBookPen);
+
+// Task - 13
+console.log("\n_______________________\n");
+
+let numbers1 = [3, 5, 7, 10, 0, 20, 17, 10, 23, 56, 78];
+console.log(numbers1);
+
+// Counting elements more than 10
+let countMoreThan10 = 0;
+let i = 0;
+do {
+  if (numbers1[i] > 10) {
+    countMoreThan10++;
+  }
+  i++;
+} while (i < numbers1.length);
+console.log("Elements that are more than 10 =", countMoreThan10);
+
+// Counting elements less than 10
+let countLessThan10 = 0;
+i = 0;
+do {
+  if (numbers1[i] < 10) {
+    countLessThan10++;
+  }
+  i++;
+} while (i < numbers1.length);
+console.log("Elements that are less than 10 =", countLessThan10);
+
+// Counting elements equal to 10
+let countEqual10 = 0;
+i = 0;
+do {
+  if (numbers1[i] === 10) {
+    countEqual10++;
+  }
+  i++;
+} while (i < numbers1.length);
+console.log("Elements that are 10 =", countEqual10);
