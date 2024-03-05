@@ -190,12 +190,12 @@ function firstDuplicate(arr) {
   return -1;
 }
 
-console.log(firstDuplicate([3, 7, 10, 0, 3, 10])); // Output: 3
-console.log(firstDuplicate([5, 7, 7, 0, 5, 10])); // Output: 7
-console.log(firstDuplicate([5, "5", 3, 7, 4])); // Output: -1
-console.log(firstDuplicate([123, "abc", "123", 3, "abc"])); // Output: abc
-console.log(firstDuplicate([1, 2, 3])); // Output: -1
-console.log(firstDuplicate(["foo", "abc", "123", "bar"])); // Output: -1
+console.log(firstDuplicate([3, 7, 10, 0, 3, 10]));
+console.log(firstDuplicate([5, 7, 7, 0, 5, 10]));
+console.log(firstDuplicate([5, "5", 3, 7, 4]));
+console.log(firstDuplicate([123, "abc", "123", 3, "abc"]));
+console.log(firstDuplicate([1, 2, 3]));
+console.log(firstDuplicate(["foo", "abc", "123", "bar"]));
 
 // Task - 16
 console.log("\n_______________________\n");
