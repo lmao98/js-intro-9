@@ -196,3 +196,139 @@ console.log(firstDuplicate([5, "5", 3, 7, 4])); // Output: -1
 console.log(firstDuplicate([123, "abc", "123", 3, "abc"])); // Output: abc
 console.log(firstDuplicate([1, 2, 3])); // Output: -1
 console.log(firstDuplicate(["foo", "abc", "123", "bar"])); // Output: -1
+
+// Task - 16
+console.log("\n_______________________\n");
+
+function getDuplicates(arr) {
+  let duplicates = [];
+  let seen = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    let currentItem = arr[i];
+
+    if (seen[currentItem] !== undefined) {
+      if (!duplicates.includes(currentItem)) {
+        duplicates.push(currentItem);
+      }
+    } else {
+      seen[currentItem] = true;
+    }
+  }
+
+  return duplicates;
+}
+
+console.log(getDuplicates([0, -4, -7, 0, 5, 10, 45, -7, 0]));
+console.log(getDuplicates([1, 2, 5, 0, 7]));
+console.log(getDuplicates(["A", "foo", "12", 12, "bar", "a", "a", "foo"]));
+console.log(getDuplicates(["foo", "12", 12, "bar", "a"]));
+
+// Task - 17
+console.log("\n_______________________\n");
+
+function reverseStringWords(str) {
+  let words = str.trim().split(" ");
+  let reversedWords = [];
+
+  for (let i = 0; i < words.length; i++) {
+    let reversedWord = words[i].split("").reverse().join("");
+    reversedWords.push(reversedWord);
+  }
+  let reversedString = reversedWords.join(" ");
+
+  return reversedString;
+}
+
+console.log(reverseStringWords("Hello World"));
+console.log(reverseStringWords("Hello World"));
+console.log(reverseStringWords("I like JavaScript"));
+console.log(reverseStringWords("Hello"));
+console.log(reverseStringWords(""));
+console.log(reverseStringWords("    "));
+
+// Task - 18
+console.log("\n_______________________\n");
+
+function getEvens(start, end) {
+  let evens = [];
+
+  if (start > end) {
+    // swapping the values of start and end to make sure start is less than end
+    let temporary = start;
+    start = end;
+    end = temporary;
+  }
+  if (start % 2 !== 0) {
+    start++;
+  }
+
+  for (let i = start; i <= end; i += 2) {
+    evens.push(i);
+  }
+
+  return evens;
+}
+
+console.log(getEvens(2, 7));
+console.log(getEvens(17, 5));
+console.log(getEvens(4, 4));
+console.log(getEvens(3, 3));
+
+// Task - 19
+console.log("\n_______________________\n");
+
+function getMultipleOf5(num1, num2) {
+  let divisableByFive = [];
+
+  if (num1 > num2) {
+    let temporary = num1;
+    num1 = num2;
+    num2 = temporary;
+  }
+  for (let i = num1; i <= num2; i++) {
+    if (i % 5 === 0) divisableByFive.push(i);
+  }
+  return divisableByFive;
+}
+
+console.log(getMultipleOf5(3, 17));
+console.log(getMultipleOf5(23, 5));
+console.log(getMultipleOf5(5, 5));
+console.log(getMultipleOf5(2, 4));
+
+// Task - 20
+console.log("\n_______________________\n");
+
+function fizzBuzz(start, end) {
+  let result = "";
+
+  if (start > end) {
+    let temp = start;
+    start = end;
+    end = temp;
+  }
+
+  for (let i = start; i <= end; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      result += "FizzBuzz";
+    } else if (i % 3 === 0) {
+      result += "Fizz";
+    } else if (i % 5 === 0) {
+      result += "Buzz";
+    } else {
+      result += i;
+    }
+
+    if (i < end) {
+      result += " | ";
+    }
+  }
+
+  return result;
+}
+
+console.log(fizzBuzz(13, 18));
+console.log(fizzBuzz(12, 5));
+console.log(fizzBuzz(5, 5));
+console.log(fizzBuzz(9, 6));
