@@ -68,15 +68,59 @@ console.log(countConsonants(""));
 
 console.log("\n_______________________\n");
 
+const countWords = (str) => {
+  let arrayOfWords = str.trim().split(" ");
+  return arrayOfWords.length;
+};
+
+console.log(countWords("     Javascript is fun       "));
+console.log(countWords("Cypress is an UI automation tool.    "));
+console.log(countWords("1 2 3 4"));
+
+// Task 06
+
+console.log("\n_______________________\n");
+
 /*
-Write a function named countWords() which takes a 
-string argument and returns the total count of words in 
-the given string when invoked.
-NOTE: Be careful about the extra whitespaces before 
-and after the string.
+
+*/
+
+const factorial = (num) => {
+  let result = 1;
+  if (num === 0 || num === 1) {
+    return 1;
+  }
+  for (let i = 1; i <= num; i++) {
+    result *= i;
+  }
+  return result;
+};
+
+console.log(factorial(5));
+console.log(factorial(4));
+console.log(factorial(0));
+console.log(factorial(1));
+console.log(factorial(7));
+
+// Task 07
+
+console.log("\n_______________________\n");
+
+/*
+Write a function named as isPalindrome() which takes a 
+string word as an argument and returns true if the word is 
+palindrome or returns false otherwise when invoked.
+NOTE: Palindrome: It is a word that is read the same backward 
+as forward
+Examples: kayak, civic, madam
+NOTE: your function should ignore case sensitivity
 Examples:
-countWords("     Javascript is fun       ")  -> 3
-countWords("Cypress is an UI automation tool.    ") 
--> 6 countWords("1 2 3 4") 
--> 4
+isPalindrome("Hello")  -> false
+isPalindrome("Kayak")  -> true 
+isPalindrome("civic")  -> true
+isPalindrome("abba")  -> true
+isPalindrome("ab  a")  -> false
+isPalindrome("123454321")  -> true
+isPalindrome("A")  -> true
+isPalindrome("")  -> true
 */
