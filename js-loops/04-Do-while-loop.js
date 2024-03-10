@@ -37,9 +37,11 @@ if (found) {
   console.log(`The number is found after ${counter} ${timeOrTimes}!`);
 }
 
+///////////////////
+
 let attempt = 0;
 
-let randomNumber = generateRandomNumber(1, 10);
+let randomNumber;
 
 for (i = 1; i <= randomNumber; i++) {
   if (i % 2 === 0) console.log(i);
