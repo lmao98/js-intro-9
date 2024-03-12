@@ -107,20 +107,105 @@ console.log(factorial(7));
 console.log("\n_______________________\n");
 
 /*
-Write a function named as isPalindrome() which takes a 
-string word as an argument and returns true if the word is 
-palindrome or returns false otherwise when invoked.
-NOTE: Palindrome: It is a word that is read the same backward 
-as forward
-Examples: kayak, civic, madam
-NOTE: your function should ignore case sensitivity
-Examples:
-isPalindrome("Hello")  -> false
-isPalindrome("Kayak")  -> true 
-isPalindrome("civic")  -> true
-isPalindrome("abba")  -> true
-isPalindrome("ab  a")  -> false
-isPalindrome("123454321")  -> true
-isPalindrome("A")  -> true
-isPalindrome("")  -> true
+
+*/
+
+function isPalindrome(str) {
+  str = str.toLowerCase();
+
+  for (let i = 0; i < Math.floor(str.length / 2); i++) {
+    if (str[i] !== str[str.length - 1 - i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+console.log(isPalindrome("Hello"));
+console.log(isPalindrome("Kayak"));
+console.log(isPalindrome("civic"));
+console.log(isPalindrome("abba"));
+console.log(isPalindrome("ab  a"));
+console.log(isPalindrome("123454321"));
+console.log(isPalindrome("A"));
+console.log(isPalindrome(""));
+
+// Task 08
+
+console.log("\n_______________________\n");
+
+/*
+
+*/
+
+const countMultipleWords = (arr) => {
+  let counter = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].trim().split(" ").length > 1) counter++;
+  }
+  return counter;
+};
+
+console.log(countMultipleWords(["foo", "", "    ", "foo bar", "     foo"]));
+console.log(countMultipleWords(["foo", "bar", "foobar", "     foobar   "]));
+console.log(countMultipleWords(["f o o", "b a r", "foo bar", "     foo bar   "]));
+console.log(countMultipleWords([]));
+
+// Task 09
+
+console.log("\n_______________________\n");
+
+/*
+
+*/
+
+const count3OrLess = (str) => {
+  let counter = 0;
+  str = str.trim().split(" ");
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].length <= 3 && str[i].length > 0) counter++;
+  }
+  return counter;
+};
+console.log(count3OrLess("Hello"));
+console.log(count3OrLess("Hi John"));
+console.log(count3OrLess("JavaScript is fun"));
+console.log(count3OrLess("My name is John Doe"));
+console.log(count3OrLess(""));
+
+// Task 10
+
+console.log("\n_______________________\n");
+
+/*
+
+*/
+
+const isPrime = (num) => {
+  if (num < 2) return false;
+
+  // If the number is divisible by any integer from 2 to its square root (not a prime number)
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+console.log(isPrime(5));
+console.log(isPrime(2));
+console.log(isPrime(29));
+console.log(isPrime(-5));
+console.log(isPrime(0));
+console.log(isPrime(1));
+
+// Task 10
+
+console.log("\n_______________________\n");
+
+/*
+
 */
