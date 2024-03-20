@@ -113,10 +113,6 @@ console.log(noA(["apple", "abc", "ABC", "Alex", "A"]));
 
 console.log("\n_______________________\n");
 
-/*
-
-*/
-
 const no3and5 = (arr) => {
   let index = 0;
   for (const num of arr) {
@@ -149,56 +145,149 @@ const no3and5 = (arr) => {
 
 console.log("\n_______________________\n");
 
-/*
-Write a function named countPrimes() which takes an array of integer 
-numbers as argument and will return the number of the prime numbers in the 
-given array.
-NOTE: Prime number is a number that can be divided only by 1 and itself .
-NOTE: Negative numbers cannot be prime .
-Examples: 2,3,5,7,11,13,17,19,23,29,31,37 etc. 
-NOTE: Smallest prime number is 2.
-Examples:
-countPrimes([-10, -3, 0, 1])  -> 0
-countPrimes([7, 4, 11, 23, 17])  -> 4
-countPrimes([41, 53, 19, 47, 67])  -> 5
-*/
-
-// const countPrimes = (arr) => {
-//   arr.map(num => {
-
-//   })
-// }
-
-// const isPrime = (num) => {
-//   if (num <= 1) return false;
-//   if (num <= 3) return true;
-
-//   if (num % 2 === 0 || num % 3 === 0) return false;
-
-//   for (let i = 5; i * i <= num; i += 6) {
-//     if (num % i === 0 || num % (i + 2) === 0) return false;
-//   }
-
-//   return true;
-// };
-
-// const countPrimes = (arr) => {
-//   return arr.reduce((count, num) => {
-//     if (num > 1 && isPrime(num)) {
-//       count++;
-//     }
-//     return count;
-//   }, 0);
-// };
-
-// console.log(countPrimes([-10, -3, 0, 1]));
-// console.log(countPrimes([7, 4, 11, 23, 17]));
-// console.log(countPrimes([41, 53, 19, 47, 67]));
-
 const isPrime = (num) => {
-  if (num < 2) return `${num} is not a prime number`;
+  if (num < 2) return false;
   for (let i = 2; i < num; i++) {
-    if (num % 2 === 0) return `${num} is not a prime number`;
+    if (num % 2 === 0) return false;
   }
-  return `${num} is a prime number`;
+  return true;
 };
+
+const countPrimes = (arr) => {
+  return arr.reduce((count, num) => {
+    if (num > 1 && isPrime(num)) {
+      count++;
+    }
+    return count;
+  }, 0);
+};
+
+console.log(countPrimes([-10, -3, 0, 1]));
+console.log(countPrimes([7, 4, 11, 23, 17]));
+console.log(countPrimes([41, 53, 19, 47, 67]));
+
+// Task 09
+
+console.log("\n_______________________\n");
+
+const removeDuplicates = (arr) => {
+  return arr.reduce((prev, curr) => {
+    if (!prev.includes(curr)) prev.push(curr);
+    return prev;
+  }, []);
+};
+
+console.log(removeDuplicates([10, 20, 35, 20, 35, 60, 70, 60]));
+console.log(removeDuplicates([1, 2, 5, 2, 3]));
+console.log(removeDuplicates([0, -1, -2, -2, -1]));
+console.log(removeDuplicates(["abc", "xyz", "123", "ab", "abc", "ABC"]));
+console.log(removeDuplicates(["1", "2", "3", "2", "3"]));
+
+// Task 10
+
+console.log("\n_______________________\n");
+
+const isDateFormatValid = (dateString) => {
+  dateString = dateString.trim();
+  const parts = dateString.split("/");
+  if (parts.length !== 3) {
+    return false;
+  }
+
+  const month = parts[0].trim();
+  const day = parts[1].trim();
+  const year = parts[2].trim();
+
+  if (
+    isNaN(month) ||
+    isNaN(day) ||
+    isNaN(year) ||
+    month.length !== 2 ||
+    day.length !== 2 ||
+    year.length !== 4 ||
+    Number(month) < 1 ||
+    Number(month) > 12 ||
+    Number(day) < 1 ||
+    Number(day) > 31
+  ) {
+    return false;
+  }
+
+  return true;
+};
+
+console.log(isDateFormatValid(""));
+console.log(isDateFormatValid("15/30/2020"));
+console.log(isDateFormatValid("10-30-2020 "));
+console.log(isDateFormatValid("10.30.2020"));
+console.log(isDateFormatValid("5/30/2020"));
+console.log(isDateFormatValid("05/30/2020 "));
+console.log(isDateFormatValid("10/2/2020"));
+console.log(isDateFormatValid("10/02/2020 "));
+
+// Task 11
+
+console.log("\n_______________________\n");
+
+const secondMax = (arr) => {
+  const uniqueArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (uniqueArr.indexOf(arr[i]) === -1) {
+      uniqueArr.push(arr[i]);
+    }
+  }
+  uniqueArr.sort((a, b) => b - a);
+  return uniqueArr[1] !== undefined ? uniqueArr[1] : uniqueArr[0];
+};
+console.log(secondMax([7, 4, 4, 4, 23, 23, 23]));
+console.log(secondMax([3, 4, 5, 6]));
+console.log(secondMax([10]));
+
+// Task 12
+
+console.log("\n_______________________\n");
+
+const secondMin = (arr) => {
+  const uniqueArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (uniqueArr.indexOf(arr[i]) === -1) {
+      uniqueArr.push(arr[i]);
+    }
+  }
+  uniqueArr.sort((a, b) => a - b);
+  return uniqueArr[1] !== undefined ? uniqueArr[1] : uniqueArr[0];
+};
+console.log(secondMin([7, 4, 4, 4, 23, 23, 23]));
+console.log(secondMin([3, 4, 5, 6]));
+console.log(secondMin([10]));
+
+// Task 13
+
+console.log("\n_______________________\n");
+
+function mostRepeated(arr) {
+  const countMap = {};
+
+  // Counting the occurrences of each element
+  arr.forEach((element) => {
+    countMap[element] = (countMap[element] || 0) + 1;
+  });
+  let maxCount = 0;
+  let mostRepeatedElement;
+
+  for (const element in countMap) {
+    if (countMap[element] > maxCount) {
+      maxCount = countMap[element];
+      mostRepeatedElement = element;
+    }
+  }
+
+  return mostRepeatedElement;
+}
+
+console.log(mostRepeated([4, 7, 4, 4, 4, 23, 23, 23]));
+console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]));
+console.log(mostRepeated([10]));
+console.log(mostRepeated(["TechGlobal"]));
