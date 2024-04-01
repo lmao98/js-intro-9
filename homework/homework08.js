@@ -63,16 +63,6 @@ console.log(containsValue(["abc", "def", "123", "Javascript", "Hello"], "123"));
 
 console.log("\n_______________________\n");
 
-/*
-Write a function named reverseSentence() which takes a string as argument 
-and returns the words in reverse order.  If there is no enough words reverse, 
-return "There is not enough words!".
-Examples:
-reverseSentence("Hello")  -> "There is not enough words!"
-reverseSentence("Javascript is fun")  -> "Fun is javascript"
-reverseSentence("This is a sentence")  -> "Sentence a is this"
-*/
-
 const reverseSentence = (str) => {
   const words = str.split(" ");
   if (words.length <= 2) return "There is not enough words!";
@@ -86,3 +76,51 @@ const reverseSentence = (str) => {
 console.log(reverseSentence("Hello"));
 console.log(reverseSentence("Javascript is fun"));
 console.log(reverseSentence("This is a sentence"));
+
+// Task 06
+
+console.log("\n_______________________\n");
+
+const removeStringSpecialsDigits = (str) => {
+  let result = "";
+  for (const char of str) {
+    if ((char >= "A" && char <= "Z") || (char >= "a" && char <= "z") || char === " ") {
+      result += char;
+    }
+  }
+  return result;
+};
+
+console.log(removeStringSpecialsDigits("123Javascript #$%is fun"));
+console.log(removeStringSpecialsDigits("Cypress"));
+console.log(removeStringSpecialsDigits("Automation123#$%"));
+
+// Task 07
+
+console.log("\n_______________________\n");
+
+/*
+Write a function named removeArraySpecialsDigits() which takes a string 
+array as argument and return back without the special characters or digits.
+Examples:
+removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"])  -> 
+["Javascript", "is", "fun"]
+removeArraySpecialsDigits(["Cypress", "123$%", "###"])  -> ["Cypress", "", 
+""]
+removeArraySpecialsDigits(["Automation", "123#$%tool"])  -> ["Automation", 
+"tool"]
+*/
+const removeArraySpecialsDigits = (arr) => {
+  return arr.map((str) => {
+    let result = "";
+    for (let i = 0; i < str.length; i++) {
+      const char = str[i];
+      if ((char >= "A" && char <= "Z") || (char >= "a" && char <= "z") || char === " ") {
+        result += char;
+      }
+    }
+    return result;
+  });
+};
+
+console.log(removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"]));
