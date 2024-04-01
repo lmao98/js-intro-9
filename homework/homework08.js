@@ -99,21 +99,12 @@ console.log(removeStringSpecialsDigits("Automation123#$%"));
 
 console.log("\n_______________________\n");
 
-/*
-Write a function named removeArraySpecialsDigits() which takes a string 
-array as argument and return back without the special characters or digits.
-Examples:
-removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"])  -> 
-["Javascript", "is", "fun"]
-removeArraySpecialsDigits(["Cypress", "123$%", "###"])  -> ["Cypress", "", 
-""]
-removeArraySpecialsDigits(["Automation", "123#$%tool"])  -> ["Automation", 
-"tool"]
-*/
 const removeArraySpecialsDigits = (arr) => {
   return arr.map((str) => {
+    // map over each word in the array
     let result = "";
     for (let i = 0; i < str.length; i++) {
+      // loop over each character of each word
       const char = str[i];
       if ((char >= "A" && char <= "Z") || (char >= "a" && char <= "z") || char === " ") {
         result += char;
@@ -124,3 +115,34 @@ const removeArraySpecialsDigits = (arr) => {
 };
 
 console.log(removeArraySpecialsDigits(["123Javascript", "#$%is", "fun"]));
+console.log(removeArraySpecialsDigits(["Cypress", "123$%", "###"]));
+console.log(removeArraySpecialsDigits(["Automation", "123#$%tool"]));
+
+// Task 08
+
+console.log("\n_______________________\n");
+
+const getCommons = (arr1, arr2) => {
+  return arr1.filter((str) => arr2.includes(str));
+};
+
+console.log(getCommons(["Javascript", "is", "fun"], ["abc", "xyz", "123"]));
+console.log(getCommons(["Javascript", "is", "fun"], ["Javascript", "C#", "Python"]));
+console.log(getCommons(["Javascript", "C#", "C#"], ["Python", "C#", "C++"]));
+
+// Task 09
+
+console.log("\n_______________________\n");
+
+const noXInVariables = (arr) => {
+  return arr.filter((element) => {
+    if (typeof element !== "string") return true;
+    // keeping all the non string characters and making sure the string of x isn't included in the final return
+    return !element.toLowerCase().includes("x");
+  });
+};
+
+console.log(noXInVariables(["abc", 123, "#$%"]));
+console.log(noXInVariables(["xyz", 123, "#$%"]));
+console.log(noXInVariables(["x", 123, "#$%"]));
+console.log(noXInVariables(["xyXyxy", "Xx", "ABC"]));
