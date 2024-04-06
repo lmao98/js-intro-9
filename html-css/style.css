@@ -1,0 +1,22 @@
+h1 {
+  color: darkred;
+  background-color: lightyellow;
+  text-align: center;
+}
+body {
+  text-align: center;
+  border: solid;
+  border-color: darkred;
+}
+h2 {
+  color: darkred;
+}
+p {
+  background-color: silver;
+}
+a {
+  color: blue;
+}
+b.first_line {
+  color: limegreen;
+}
