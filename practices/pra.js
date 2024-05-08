@@ -20,31 +20,39 @@
 
 // console.log(miniMaxSum([1, 2, 3, 4, 5]));
 
-function miniMaxSum(arr) {
-  let min = Infinity;
-  let max = -Infinity;
-  let sum = 0;
+// function miniMaxSum(arr) {
+//   let min = Infinity;
+//   let max = -Infinity;
+//   let sum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-    if (arr[i] < min) {
-      min = arr[i];
-    }
-    if (arr[i] > max) {
-      max = arr[i];
-    }
-  }
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//     if (arr[i] < min) {
+//       min = arr[i];
+//     }
+//     if (arr[i] > max) {
+//       max = arr[i];
+//     }
+//   }
 
-  const minSum = sum - max;
-  const maxSum = sum - min;
+//   const minSum = sum - max;
+//   const maxSum = sum - min;
 
-  return minSum + " " + maxSum;
-}
+//   return minSum + " " + maxSum;
+// }
 
-function lonelyinteger(arr) {
-  let result = 0;
-  for (let num of arr) {
-    result ^= num;
-  }
-  return result;
-}
+// function lonelyinteger(arr) {
+//   let result = 0;
+//   for (let num of arr) {
+//     result ^= num;
+//   }
+//   return result;
+// }
+// const countPos = (arr) => {
+//   let counter = 0;
+//   for (let num of arr) {
+//     if (num > 0) counter++;
+//   }
+//   return counter;
+// };
+// console.log(countPos([0, -5, -4, -3, 1, 2]));
