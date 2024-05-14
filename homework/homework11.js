@@ -280,19 +280,34 @@ countOccurrence("Hello", "l")   -> 2
 countOccurrence("IT conversations", "IT")   -> 2
 */
 
-const countOccurrence = (firstStr, secondStr) => {
-  let count = 0;
-  let index = -1;
+// const countOccurrence = (firstStr, secondStr) => {
+//   let count = 0;
+//   let index = -1;
 
-  while ((index = firstStr.indexOf(secondStr, index + 1)) !== -1) {
-    count++;
+//   // firstStr = firstStr.spilt("");
+//   // secondStr = secondStr.spilt("");
+
+//   // firstStr = firstStr.sort();
+//   // secondStr = secondStr.sort();
+
+//   while ((index = firstStr.indexOf(secondStr, index + 1)) !== -1) {
+//     count++;
+//   }
+
+//   return count;
+// };
+
+const countOccurrence = (str1, str2) => {
+  let arrOfOccurrences = [];
+
+  for (char of str2) {
+    arrOfOccurrences.push(str1.split("").filter((c) => c.toLowerCase() === char.toLowerCase()).length);
   }
-
-  return count;
+  return arrOfOccurrences.sort()[0];
 };
 
 console.log(countOccurrence("Javascript", "Java"));
 console.log(countOccurrence("Hello", "World"));
 console.log(countOccurrence("Can I can a can", "anc"));
 console.log(countOccurrence("Hello", "l"));
-console.log(countOccurrence("IT conversations", "IT"));
+console.log(countOccurrence("IT conversaitons", "IT"));
